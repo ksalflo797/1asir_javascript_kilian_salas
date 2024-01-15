@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <script>
+        let vec = [10, 30, 43];
+        document.write('Recorrido del vector con un for clásico<br>');
+        for (let f = 0; f < vec.length; f++) {
+            document.write(vec[f] + '-');
+        }
+        document.write('<br>');
+        document.write('Recorrido del vector con un for in<br>');
+        for (let indice in vec) {
+            document.write(vec[indice] + '-');
+        }
+    </script>
+
+</body>
+</html>
