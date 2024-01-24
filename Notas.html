@@ -8,42 +8,58 @@
 <body>
 
 <script>
+  // Función para calcular la media de las notas
+  function calcularMedia(notas) {
+    var suma = 0;
+    for (var i = 0; i < notas.length; i++) {
+      suma += notas[i];
+    }
+    return suma / notas.length;
+  }
+
+  // Función para verificar si está aprobado o no
+  function estaAprobado(media) {
+    return media >= 5;
+  }
+
+  // Función para obtener las notas aprobadas
+  function obtenerNotasAprobadas(notas) {
+    var notasAprobadas = [];
+    for (var i = 0; i < notas.length; i++) {
+      if (notas[i] >= 7) {
+        notasAprobadas.push(notas[i]);
+      }
+    }
+    return notasAprobadas;
+  }
+
+  // Función para mostrar resultados en la consola y en la página
+  function mostrarResultados(notas) {
+    var media = calcularMedia(notas);
+    var aprobado = estaAprobado(media);
+    var notasAprobadas = obtenerNotasAprobadas(notas);
+
+    console.log("Notas:", notas);
+    console.log("Media:", media);
+    console.log("¿Está aprobado?", aprobado);
+    console.log("Notas Aprobadas:", notasAprobadas);
+
+    document.write("<h2>Notas:</h2>");
+    document.write("<p>" + notas.join(", ") + "</p>");
+    document.write("<h2>Media:</h2>");
+    document.write("<p>" + media + "</p>");
+    document.write("<h2>¿Está aprobado?</h2>");
+    document.write("<p>" + (aprobado ? "Sí" : "No") + "</p>");
+    document.write("<h2>Notas Aprobadas:</h2>");
+    document.write("<p>" + notasAprobadas.join(", ") + "</p>");
+  }
+
   // Declarar un array con notas
   var notas = [8, 9, 7, 5, 2];
 
-  // Calcular la media de las notas
-  var suma = 0;
-  for (var i = 0; i < notas.length; i++) {
-    suma += notas[i];
-  }
-  var media = suma / notas.length;
+  // Llamar a la función para mostrar resultados
+  mostrarResultados(notas);
 
-  // Verificar si está aprobado o no
-  var estaAprobado = media >= 5;
-
-  // Crear un segundo array con las notas aprobadas
-  var notasAprobadas = [];
-  for (var i = 0; i < notas.length; i++) {
-    if (notas[i] >= 7) {
-      notasAprobadas.push(notas[i]);
-    }
-  }
-
-  // Mostrar resultados en la consola y en la página
-  console.log("Notas:", notas);
-  console.log("Media:", media);
-  console.log("¿Está aprobado?", estaAprobado);
-  console.log("Notas Aprobadas:", notasAprobadas);
-
-  // Mostrar resultados en la página
-  document.write("<h2>Notas:</h2>");
-  document.write("<p>" + notas.join(", ") + "</p>");
-  document.write("<h2>Media:</h2>");
-  document.write("<p>" + media + "</p>");
-  document.write("<h2>¿Está aprobado?</h2>");
-  document.write("<p>" + (estaAprobado ? "Sí" : "No") + "</p>");
-  document.write("<h2>Notas Aprobadas:</h2>");
-  document.write("<p>" + notasAprobadas.join(", ") + "</p>");
 </script>
 
 </body>
