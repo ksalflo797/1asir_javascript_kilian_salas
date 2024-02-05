@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calificaciones</title>
+</head>
+<body>
+
+<script>
+  //Declarar los sueldos de un empleado y obtener su media//
+//Los sueldos que se declaren en un array//
+
+//======================FUNCIONES ===========================
+function Proceso(tab_sueldos) {
+  suma=0; 
+  for(const x in tab_sueldos){
+    if (x > 0 ) {
+      suma=suma + tab_sueldos[x];}
+  }
+  media=suma / (tab_sueldos.length -1);
+  return(media);
+}
+
+function Visualizar(media, tab_sueldos){
+  alert("La media de " + tab_sueldos[0] + " es:" + media)
+}
+
+
+//================PROGRAMA PRINCIPAL===================
+
+tab_sueldos= [ "Luis",1000, 2500, 800, 2000, 3000 ]
+resul = Proceso (tab_sueldos);
+Visualizar (resul, tab_sueldos);
+
+</script>
+
+</body>
+</html>
