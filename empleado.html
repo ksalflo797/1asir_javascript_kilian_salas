@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calificaciones</title>
+</head>
+<body>
+
+<script>
+  //Guardar en un array los sueldos de los diferentes empleados de una empresa//
+  //La media y el nombre de cada uno de los empleados//
+
+//======================FUNCIONES ===========================
+
+function Media(tab_sueldos) {
+  suma=0; 
+  for(const x in tab_sueldos){
+    if (x > 0 ) {
+      suma=suma + tab_sueldos[x]; }
+  }
+  media=suma / (tab_sueldos.length -1);
+  return(media);
+}
+
+function Visualizar(mat_sueldos){
+  for(const x in mat_sueldos){
+    med=Media(mat_sueldos [x]);
+    alert(" La media de: " + mat_sueldos [x][0] + " es " + med); 
+  } 
+}
+
+
+//================PROGRAMA PRINCIPAL===================
+
+mat_sueldos= [ ["Luis",1000, 1000, 1000, 1000, 1000],
+               ["Ana",4000, 1500, 1800, 2100, 900], 
+               ["Pepe",1000, 2500, 800, 2000, 3000],
+               ["Lucia",1000, 2500, 800, 2000, 3000]
+             ];
+Visualizar(mat_sueldos);
+
+</script>
+
+</body>
+</html>
