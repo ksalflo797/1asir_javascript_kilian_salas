@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizar a Ana</title>
+</head>
+<body>
+
+<script>
+//================FUNCIONES===================
+function Visualizar(myObj){
+    alert (myObj.employees[1]['firstName']);
+}
+
+
+//================PROGRAMA PRINCIPAL===================
+
+const Anna = {employees:[
+  { firstName:"John",lastName:"Doe" },
+  { firstName:"Anna", lastName:"Smith" },
+  { firstName:"Peter", lastName:"Jones" }
+]}
+
+Visualizar(Anna);
+
+</script>
+</body>
+</html>
