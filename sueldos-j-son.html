@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empleados y Sueldos</title>
+</head>
+<body>
+
+<h2>Empleados y Sueldos</h2>
+
+<div id="empleados">
+  <!-- Aquí se mostrarán los nombres y sueldos de los empleados -->
+</div>
+
+<script>
+// Datos de los empleados y sus sueldos en formato JSON
+var empleados = [
+  {"nombre": "Juan", "sueldo": 2500},
+  {"nombre": "María", "sueldo": 2800},
+  {"nombre": "Pedro", "sueldo": 3000},
+  {"nombre": "Laura", "sueldo": 2700}
+];
+
+// Función para mostrar los nombres y sueldos de los empleados
+function Empleados() {
+  var empleadosDiv = document.getElementById("empleados");
+  empleados.forEach(function(empleado) {
+    var parrafo = document.createElement("p");
+    parrafo.textContent = empleado.nombre + ": " + empleado.sueldo;
+    empleadosDiv.appendChild(parrafo);
+  });
+}
+
+// Llamamos a la función para mostrar los empleados al cargar la página
+Empleados();
+</script>
+
+</body>
+</html>
