@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alumnos sin suspensos</title>
+</head>
+<body>
+    <h1>Notas de los alumnos</h1>
+    <div id="alumno"></div>
+
+    <script>
+        // Array que almacena las notas y los nombres de varios alumnos
+        var alumnos = [
+            { nombre: 'Juan', nota: 7 },
+            { nombre: 'María', nota: 5 },
+            { nombre: 'Pedro', nota: 9 },
+            { nombre: 'Ana', nota: 4 },
+            { nombre: 'Luis', nota: 6 }
+        ];
+
+        // Array para almacenar los nombres de los alumnos sin suspensos
+        var nombresSinSuspensos = [];
+
+        // Recorrer el array de alumnos y agregar los nombres sin suspensos al array
+        for (var i = 0; i < alumnos.length; i++) {
+            if (alumnos[i].nota >= 5) {
+                nombresSinSuspensos.push(alumnos[i].nombre);
+            }
+        }
+
+        // Mostrar los nombres en la página sin utilizar outputDiv
+        var outputHTML = '<h2>Nombres de los alumnos sin suspensos:</h2>';
+        outputHTML += '<p>' + nombresSinSuspensos.join(', ') + '</p>';
+        document.getElementById('alumno').innerHTML = outputHTML;
+    </script>
+</body>
+</html>
