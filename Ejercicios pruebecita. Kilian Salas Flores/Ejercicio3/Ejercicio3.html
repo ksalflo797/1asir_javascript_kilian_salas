@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Día/Noche</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+            $("#noche").hide();
+            $("#botonnoche").click(function () {
+                $("#noche").show();
+                $("#dia").hide();
+            });
+            $("#botondia").click(function () {
+                $("#dia").show();
+                $("#noche").hide();
+            });
+          });
+</script>
+</head>
+  <body>
+      <div id="dia"><img src="dia.jpg" alt="dia" style="width:200px;height:200px;"></div>
+      <div id="noche"><img src="noche.jpg" alt="noche" style="width:200px;height:200px;"></div>
+  
+    <button id="botondia"> Dia</button>
+    <button id="botonnoche"> Noche</button>
+  </body>
+</html>

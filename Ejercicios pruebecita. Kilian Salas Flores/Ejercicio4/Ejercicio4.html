@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>
+</head>
+<body>
+
+  <input type="number" id="numero1" placeholder="Primer número">
+  <input type="number" id="numero2" placeholder="Segundo número">
+
+  <button onclick="realizaroperacion('+')">Sumar</button>
+  <button onclick="realizaroperacion('-')">Restar</button>
+  <button onclick="realizaroperacion('*')">Multiplicar</button>
+  <button onclick="realizaroperacion('/')">Dividir</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function realizaroperacion(operador) {
+      const num1 = parseFloat(document.getElementById('numero1').value);
+      const num2 = parseFloat(document.getElementById('numero2').value);
+      let resultado;
+
+      resultado = operador === '+' ? num1 + num2 :
+                  operador === '-' ? num1 - num2 :
+                  operador === '*' ? num1 * num2 :
+                  operador === '/' ? (num2 !== 0 ? num1 / num2 : 'Error: División por cero') :
+                  'Error: Operador no válido';
+
+      document.getElementById('resultado').textContent = `Resultado: ${resultado}`;
+    }
+  </script>
+
+</body>
+</html>

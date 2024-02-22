@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buscar número en array</title>
+</head>
+<body>
+
+<h2>Buscar número en array</h2>
+
+<p>Introduce un número y pulsa el botón para buscarlo en el array:</p>
+
+<input type="text" id="numeroInput">
+<button onclick="numero()">Buscar</button>
+
+<p id="resultado"></p>
+
+<script>
+
+var numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function numero() {
+    var numerobuscado = parseInt(document.getElementById("numeroInput").value);
+    var encontrado = buscarenarray(numerobuscado);
+
+    if (encontrado) {
+        document.getElementById("resultado").innerHTML = "El número " + numerobuscado + " está en el array.";
+    } else {
+        document.getElementById("resultado").innerHTML = "El número " + numerobuscado + " no está en el array.";
+    }
+}
+
+function buscarenarray(numero) {
+    for (var i = 0; i < numeros.length; i++) {
+        if (numeros[i] === numero) {
+            return true;
+        }
+    }
+    return false;
+}
+</script>
+
+</body>
+</html>

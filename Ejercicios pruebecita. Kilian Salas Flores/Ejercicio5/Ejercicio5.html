@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valores Negativos</title>
+</head>
+<body>
+
+<h1>La Media de los valores negativos</h1>
+
+<script>
+
+var numeros = [6, -3, 5, -1, -7, 10, -4];
+
+var sumanegativos = 0;
+var cantidadnegativos = 0;
+
+for (var i = 0; i < numeros.length; i++) {
+    if (numeros[i] < 0) {
+        sumanegativos += numeros[i];
+        cantidadnegativos++;
+    }
+}
+
+var medianegativos = cantidadnegativos > 0 ? sumanegativos / cantidadnegativos : 0;
+
+document.write("<p>La media de los valores negativos es: " + medianegativos + "</p>");
+</script>
+
+</body>
+</html>
