@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" />
+<title>Parejas</title>
+
+<p align="center"><b>Juego de parejos (version carta baraja española)</b></p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+var sw=0;
+var numero_veces =0;
+var mat = new Array(
+new Array("primeracarta.jpg", "segundacarta.jpg", "terceracarta.jpg", "cuartacarta.jpg"),
+new Array("quintacarta.jpg", "sextacarta.jpg", "septimacarta.jpg", "octavacarta.jpg"),
+new Array("terceracarta.jpg", "cuartacarta.jpg", "segundacarta.jpg", "primeracarta.jpg"),
+new Array("octavacarta.jpg", "quintacarta.jpg", "septimacarta.jpg", "sextacarta.jpg")
+);
+
+
+function Visualizar (id, fila, columna) {
+
+html = "<img src="+'img/'+mat[fila-1][columna-1]+">";
+document.getElementById(id).innerHTML = html;
+
+setTimeout(function(){
+document.getElementById(id).innerHTML = " ";
+
+}, 500);
+}
+
+function Pulsar(elemento) {
+
+
+if (Comprobar() == "si"){
+alert ("LO HAS CONSEGUIDO en "+numero_veces +" veces");
+} else {
+
+numero_veces++;
+let id = elemento.id;
+
+var fila = parseInt(id.substring(3,4));
+var columna = parseInt(id.substring(4,5));
+
+
+Visualizar (id, fila, columna);
+
+if (sw == 0) {
+elemento_1= elemento;
+anterior = document.getElementById(id).innerHTML;
+
+
+anterior_1 = fila;
+anterior_columna = columna;
+id_1 = id;
+sw=1;
+} else {
+if (document.getElementById(id).innerHTML == anterior && id != id_1){
+
+document.getElementById(id_1).innerHTML = " ";
+
+document.getElementById(id).innerHTML = " ";
+
+elemento.classList.add('amarillo');
+for (i=1; i< 50000; i++){
+}
+
+Visualizar (id_1, fila, columna);
+Visualizar (id, fila, columna);
+
+elemento_1.classList.add('amarillo');
+
+if (Comprobar() == "si")
+alert ("Bien !!LO LOGRASTE!!, lo has logrado en "+numero_veces+" veces");
+
+for (i=1; i< 50000; i++){
+}
+
+} else {
+elemento_1= elemento;
+anterior = document.getElementById(id).innerHTML;
+anterior_1 = fila;
+anterior_columna = columna;
+id_1 = id; } } 
+    }   
+}
+
+function Comprobar(){
+var lleno="si";
+var tabla = document.getElementById("tablaId");
+
+for (var i=0;i < tabla.rows.length; i++){
+for (var j=0; j < 4; j++){
+if(!tabla.rows[i].cells[j].classList.contains('amarillo')){
+lleno="no"; } 
+    }
+}
+
+return lleno;
+}
+
+</script>
+</head>
+<body>
+<form method="POST" action="">
+    <br>
+<table border="1" align="center" text-align= "center" id="tablaId">
+
+<tr id="fila1">
+<td id="col11" onclick="Pulsar(this)"></td><td id="col12" onclick="Pulsar(this)"></td><td id="col13" onclick="Pulsar(this)"></td><td id="col14" onclick="Pulsar(this)"></td>
+</tr>
+
+<tr clase="fila2">
+<td id="col21" onclick="Pulsar(this)"></td><td id="col22" onclick="Pulsar(this)"></td><td id="col23" onclick="Pulsar(this)"></td><td id="col24" onclick="Pulsar(this)"></td>
+</tr>
+
+<tr clase="fila3">
+<td id="col31" onclick="Pulsar(this)"></td><td id="col32" onclick="Pulsar(this)"></td><td id="col33" onclick="Pulsar(this)"></td><td id="col34" onclick="Pulsar(this)"></td>
+</tr>
+
+<tr clase="fila4">
+<td id="col41" onclick="Pulsar(this)"></td><td id="col42" onclick="Pulsar(this)"></td><td id="col43" onclick="Pulsar(this)"></td><td id="col44" onclick="Pulsar(this)"></td>
+</tr>
+
+<style>
+    table{
+    border: 5px solid black;
+    }
+    td{
+    width: 200px;
+    height: 200px;
+    background: white;
+    padding:0;
+    margin:0;
+    border-collapse: collapse;
+    }
+
+    .amarillo{
+    background: yellow;
+    }
+
+    p{
+        color: red;  
+    }
+
+    img{
+    
+    height: 110%;
+     width: 100%;
+    
+    
+    
+    }
+    </style>
+</table>
+
+</form>
+</body>
+</html>
